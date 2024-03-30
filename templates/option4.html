@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Enter min special attack stat:</p>
+        <form action = '/option4' method = 'POST'>
+            <label for="atk">
+                <input type = "number" name = 'atk' id = 'atk'>
+            </label>
+            <p>Enter min special defense stat:</p>
+            <label for="deff">
+                <input type = "number" name = 'deff' id = 'deff'>
+            </label>
+            <p>Enter min speed stat:</p>
+            <label for="speed">
+                <input type = "number" name = 'speed' id = 'speed'>
+                <br>
+            </label>
+            <input type = 'submit' value = 'Submit'>
+        </form>
+        </form>
+        <table>
+            {% for h in header %}
+                <th>{{ h }}</th>
+            {% endfor %}
+
+            {% for pokemon in cursor %}
+            <tr>
+                {% for stat in pokemon %}
+                <td>{{ stat }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

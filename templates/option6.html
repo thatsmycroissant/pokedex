@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action = '/option6' method="POST">
+            <label for = 'namee'>
+                <p>Name: </p>
+                <input id = 'namee' name = 'namee' type = 'text'>
+            </label>
+            <label for = 'type_1'>
+                <p>Type 1: </p>
+                <input id = 'type_1' name = 'type_1' type = 'text'>
+            </label>
+            <label for = 'type_2'>
+                <p>Type 2: </p>
+                <input id = 'type_2' name = 'type_2' type = 'text'>
+            </label>
+            <label for = 'total'>
+                <p>Total: </p>
+                <input id = 'total' name = 'total' type = 'number'>
+            </label>
+            <label for = 'hp'>
+                <p>Hp: </p>
+                <input id = 'hp' name = 'hp' type = 'number'>
+            </label>
+            <label for = 'attack'>
+                <p>Attack: </p>
+                <input id = 'attack' name = 'attack' type = 'number'>
+            </label>
+            <label for = 'defense'>
+                <p>Defense: </p>
+                <input id = 'defense' name = 'defense' type = 'number'>
+            </label>
+            <label for = 'sp_atk'>
+                <p>Special attack: </p>
+                <input id = 'sp_atk' name = 'sp_atk' type = 'number'>
+            </label>
+            <label for = 'sp_def'>
+                <p>Special defense: </p>
+                <input id = 'sp_def' name = 'sp_def' type = 'number'>
+            </label>
+            <label for = 'speed'>
+                <p>Speed: </p>
+                <input id = 'speed' name = 'speed' type = 'number'>
+            </label>
+            <label for = 'generation'>
+                <p>Generation: </p>
+                <input id = 'generation' name = 'generation' type = 'number'>
+            </label>
+            <label for = 'legendary'>
+                <p>Legendary: </p>
+                <input id = 'legendary' name = 'legendary' type = 'number'>
+            </label>
+            <br>
+            <input type = 'submit' value = 'Submit'>
+        </form>
+        <table>
+            {{message}}
+            <br>
+            {% for h in header %}
+                <th>{{ h }}</th>
+            {% endfor %}
+
+            {% for pokemon in cursor %}
+            <tr>
+                {% for stat in pokemon %}
+                    <td>{{ stat }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

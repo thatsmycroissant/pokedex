@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Enter type of Pokemon to be displayed:</p>
+        <form action = '/option2' method = 'POST'>
+            <label for="pokemon_type">
+                <input type = "text" name = 'pokemon_type' id = 'pokemon_type'>
+                <input type = 'submit' value = 'Submit'>
+            </label>
+        </form>
+        <table>
+            {% for h in header %}
+                <th>{{ h }}</th>
+            {% endfor %}
+
+            {% for pokemon in cursor %}
+            <tr>
+                {% for stat in pokemon %}
+                <td>{{ stat }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

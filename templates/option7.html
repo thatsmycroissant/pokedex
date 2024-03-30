@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action = '/option7' method = 'POST'>
+            Enter min hp: <input type = 'number' name = 'min_hp' id = min_hp>
+            <input type = 'submit' value = 'Submit'>
+        </form>
+        <table>
+            <tr>
+                <th>Count</th>
+                <th>type_1</th>
+                <th>hp</th>
+            </tr>
+            {% for stat in cursor %}
+            <tr>
+                {% for i in stat %}
+                <td>{{i}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
